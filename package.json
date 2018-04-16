@@ -1,0 +1,26 @@
+{
+    "name": "com.mymedifax.mobile",
+    "displayName": "Medifax",
+    "version": "1.0.0",
+    "description": "Medifax Customer Portal mobile application",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-ios": "^4.5.4",
+        "cordova-plugin-hidden-statusbar-overlay": "git+https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay.git",
+        "cordova-plugin-whitelist": "^1.3.3"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-hidden-statusbar-overlay": {}
+        },
+        "platforms": [
+            "ios"
+        ]
+    }
+}
