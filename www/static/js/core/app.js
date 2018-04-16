@@ -199,7 +199,6 @@
         });
     });
 
-
     $(document).on('click', '.menu-toggle, .modern-nav-toggle', function(e) {
         e.preventDefault();
 
