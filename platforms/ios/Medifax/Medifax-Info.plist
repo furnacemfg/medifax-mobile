@@ -51,6 +51,11 @@
     <dict>
       <key>NSAllowsArbitraryLoads</key>
       <true/>
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>s3.amazonaws.com</key>
+        <dict/>
+      </dict>
     </dict>
     <key>UIStatusBarHidden</key>
     <true/>
