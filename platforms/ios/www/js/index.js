@@ -66,7 +66,7 @@ $(function(){
 
       $("#patient_preferences").html(json.patient_preferences);
       $("#family_history").html(json.family_history);
-      $("#family_history").html(json.family_history);
+      $("#lifestyle_history").html(json.lifestyle_history);
       $("#lifestyle_history-type").html(json.lifestyle_history);
       $("#social_history-type").html(json.social_history);
       $("#care_plan").html(json.care_plan);
@@ -82,14 +82,13 @@ $(function(){
       $("#dental_condition").html(json.dental_condition.replace(/\n/g, "<br />"));
 
       $("#ins_provider_med").html(json.ins_provider_med);
-      $("#ins_provider_med").html(json.ins_planid_med);
-      $("#ins_provider_med").html(json.ins_street_addr_med);
-      $("#ins_provider_med").html(json.ins_city_med);
-      $("#ins_provider_med").html(json.ins_state_med);
-      $("#ins_provider_med").html(json.ins_zip_med);
-      $("#ins_provider_med").html(json.ins_phone_med);
-      $("#ins_provider_med").html(json.ins_email_med);
-
+      $("#ins_planid_med").html(json.ins_planid_med);
+      $("#ins_street_addr_med").html(json.ins_street_addr_med);
+      $("#ins_city_med").html(json.ins_city_med);
+      $("#ins_state_med").html(json.ins_state_med);
+      $("#ins_zip_med").html(json.ins_zip_med);
+      $("#ins_phone_med").html(json.ins_phone_med);
+      $("#ins_email_med").html(json.ins_email_med);
 
 
       // MEDICAL CONDITIONS
@@ -103,14 +102,17 @@ $(function(){
 
       // MEDICATIONS
       var current_medications = ""
+      var medication_list = ""
       for (i = 0; i < 10; i++) {
         if (json['medication_name_' + i] != null) {
           current_medications += "&#8226;" + " " + json['medication_name_' + i] + " - " + json['medication_dose_' + i] + " - " + json['medication_freq_' + i] + "<br />\n";
+          medication_list += medications_wrapper(json['medication_name_' + i], json['medication_dose_' + i], json['medication_freq_' + i])
         }
       }
       $("#current_medications").html(current_medications)
+      $("#medication_list").html(medication_list)
 
-    })
+    }) // End AJAX call to AWS Lambda
       .done(function() {
         // alert( "second success" );
       })
@@ -123,7 +125,7 @@ $(function(){
 });
 
 function medications_wrapper(name, dose, freq) {
-  var markup = "<div class=\"row\"><div class=\"col col-6\">" + name + "</div><div class=\"col col-3\">" + dose + "mg</div><div class=\"col col-6\">" + freq + "/day</div></div><hr />"
+  var markup = "<div class=\"row\"><div class=\"col col-5\">" + name + "</div><div class=\"col col-4\">" + dose + "mg</div><div class=\"col col-3\">" + freq + "/day</div></div>\n<hr />\n"
   return markup
 }
 

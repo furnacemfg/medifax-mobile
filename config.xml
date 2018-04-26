@@ -39,4 +39,5 @@
     </platform>
     <plugin name="cordova-plugin-hidden-statusbar-overlay" spec="https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay" />
     <engine name="ios" spec="^4.5.4" />
+    <engine name="android" spec="^7.0.0" />
 </widget>
