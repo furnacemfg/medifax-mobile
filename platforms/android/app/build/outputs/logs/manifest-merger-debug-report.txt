@@ -1,13 +1,13 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
-INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
-INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
-INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
+ADDED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-15:12
+INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-15:12
+INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-15:12
+INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-15:12
 MERGED from [:CordovaLib] /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:1-27:12
-INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
-INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
-INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-14:12
+INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-15:12
+INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-15:12
+INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:1-15:12
 	package
 		ADDED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:2:102-132
 		INJECTED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml
@@ -86,3 +86,7 @@ MERGED from [:CordovaLib] /Users/bryan/Work/FURNACE/Projects/Medifax/src/Medifax
 		ADDED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:13:42-71
 	android:minSdkVersion
 		ADDED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:13:15-41
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:14:5-71
+	android:name
+		ADDED from /Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/AndroidManifest.xml:14:22-68

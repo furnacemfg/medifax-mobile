@@ -8,10 +8,6 @@
         "source": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/res/drawable-land-mdpi/screen.png"
     },
     {
-        "merged": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_icon.png.flat",
-        "source": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/res/mipmap-xxxhdpi/icon.png"
-    },
-    {
         "merged": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/build/intermediates/res/merged/debug/drawable-port-hdpi_screen.png.flat",
         "source": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/res/drawable-port-hdpi/screen.png"
     },
@@ -70,9 +66,5 @@
     {
         "merged": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/build/intermediates/res/merged/debug/drawable-land-xxhdpi_screen.png.flat",
         "source": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/res/drawable-land-xxhdpi/screen.png"
-    },
-    {
-        "merged": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_icon.png.flat",
-        "source": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/res/mipmap-xxhdpi/icon.png"
     }
 ]

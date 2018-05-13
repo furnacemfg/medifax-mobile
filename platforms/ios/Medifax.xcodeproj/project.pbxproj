@@ -14,6 +14,8 @@
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		58548F7FDA52437185BF9639 /* APPHiddenStatusbarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = D30F63CBB65F43DAB0BCDBBF /* APPHiddenStatusbarOverlay.m */; };
+		BC9D643419294895AAAF3656 /* SpeechRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = AC566A606DE543B4943C9387 /* SpeechRecognition.m */; };
+		C62C262D70024CC4924B3605 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0F98F2E07E4EF39A7FA854 /* Speech.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Medifax/config.xml; sourceTree = "<group>"; };
 		D30F63CBB65F43DAB0BCDBBF /* APPHiddenStatusbarOverlay.m */ = {isa = PBXFileReference; name = "APPHiddenStatusbarOverlay.m"; path = "cordova-plugin-hidden-statusbar-overlay/APPHiddenStatusbarOverlay.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		C6B7A3160713449A84B878F3 /* APPHiddenStatusbarOverlay.h */ = {isa = PBXFileReference; name = "APPHiddenStatusbarOverlay.h"; path = "cordova-plugin-hidden-statusbar-overlay/APPHiddenStatusbarOverlay.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		AC566A606DE543B4943C9387 /* SpeechRecognition.m */ = {isa = PBXFileReference; name = "SpeechRecognition.m"; path = "cordova-plugin-speechrecognition/SpeechRecognition.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		6F8C62240F214C0EA6EBC6EA /* SpeechRecognition.h */ = {isa = PBXFileReference; name = "SpeechRecognition.h"; path = "cordova-plugin-speechrecognition/SpeechRecognition.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		ED0F98F2E07E4EF39A7FA854 /* Speech.framework */ = {isa = PBXFileReference; name = "Speech.framework"; path = "System/Library/Frameworks/Speech.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				C62C262D70024CC4924B3605 /* Speech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +147,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED0F98F2E07E4EF39A7FA854 /* Speech.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,6 +176,8 @@
 			children = (
 				D30F63CBB65F43DAB0BCDBBF /* APPHiddenStatusbarOverlay.m */,
 				C6B7A3160713449A84B878F3 /* APPHiddenStatusbarOverlay.h */,
+				AC566A606DE543B4943C9387 /* SpeechRecognition.m */,
+				6F8C62240F214C0EA6EBC6EA /* SpeechRecognition.h */,
 			);
 			name = Plugins;
 			path = Medifax/Plugins;
@@ -297,6 +306,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				58548F7FDA52437185BF9639 /* APPHiddenStatusbarOverlay.m in Sources */,
+				BC9D643419294895AAAF3656 /* SpeechRecognition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

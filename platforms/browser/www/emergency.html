@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://7z6lcegucj.execute-api.us-east-1.amazonaws.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: gap: https://s3.amazonaws.com/ content:;">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="msapplication-tap-highlight" content="no">
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+      <title>Medifax Customer Portal</title>
+      <script type="text/javascript" src="cordova.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/jquery-mobile-min.css">
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+      <!-- BEGIN Custom CSS-->
+      <link rel="stylesheet" type="text/css" href="static/styles/vendors.css">
+      <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="static/styles/app.css">
+      <link rel="stylesheet" type="text/css" href="static/styles/core/menu/menu-types/vertical-menu.css">
+      <link rel="stylesheet" type="text/css" href="static/styles/core/colors/palette-gradient.css">
+   </head>
+   <body data-open="click" data-menu="vertical-menu" data-col="2-columns" id="info-screen" class="container app vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar">
+      <!-- fixed-top-->
+      <nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-dark bg-gradient-x-primary navbar-shadow">
+         <div class="navbar-wrapper">
+            <div class="navbar-header">
+               <ul class="nav navbar-nav flex-row">
+                  <li class="nav-item mobile-menu d-md-none mr-auto"><a href="#" class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="ft-menu font-large-1"></i></a></li>
+                  <li class="nav-item">
+                     <a href="#" class="navbar-brand">
+                     <img alt="Medifax" src="static/images/logo/medifax-logo-blue.png" class="brand-logo" style="height: 25px;">
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <!-- ////////////////////////////////////////////////////////////////////////////-->
+      <div data-scroll-to-active="true" id="nav-panel" class="main-menu menu-fixed menu-light menu-accordion menu-shadow">
+         <div class="main-menu-content">
+            <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
+               <li class="nav-item panel-item"><a href="#emergency" class="menu-toggle"><i class="ft-alert-triangle"></i> <span data-i18n="" class="menu-title">Emergency</span></a></li>
+               <li class="nav-item panel-item"><a href="#medical"><i class="ft-activity"></i><span data-i18n="" class="menu-title">Medical</span></a></li>
+               <li class="nav-item panel-item"><a href="#dental"><i class="ft-user"></i><span data-i18n="" class="menu-title">Dental</span></a></li>
+               <li class="nav-item panel-item"><a href="#medications"><i class="ft-clipboard"></i><span data-i18n="" class="menu-title">Medications</span></a></li>
+               <li class="nav-item panel-item"><a href="#insurance"><i class="ft-file-text"></i><span data-i18n="" class="menu-title">Insurance</span></a></li>
+               <li class="nav-item panel-item"><a href="#share"><i class="ft-share-2"></i><span data-i18n="" class="menu-title">Share Records</span></a></li>
+               <li class="nav-item panel-item"><a href="#" id="refresh-data"><i class="ft-download-cloud"></i><span data-i18n="" class="menu-title">Refresh Data</span></a></li>
+               <!--<li class="nav-item panel-item"><a href="#account"><i class="ft-settings"></i><span data-i18n="" class="menu-title">Settings</span></a></li>-->
+               <li class="nav-item panel-item" id="logout"><a href="index.html"><i class="ft-log-out"></i><span data-i18n="" class="menu-title">Logout</span></a></li>
+            </ul>
+         </div>
+      </div>
+      <div class="row" style="margin-bottom: 5px; margin-right: 10px; margin-top: 20px;">
+         <div class="col-3">
+            <a href="#medical" data-role="button"><button type="button" class="btn btn-secondary btn-min-width mr-1 mb-1"><strong>Medical</strong></button></a>
+         </div>
+         <div class="col-3 offset-1">
+            <a href="#dental"><button type="button" class="btn btn-secondary btn-min-width mr-1 mb-1"><strong>Dental</strong></button></a>
+         </div>
+         <div class="col-3 offset-1">
+            <a href="#medications"><button type="button" class="btn btn-secondary btn-min-width mr-1 mb-1"><strong>Medications</strong></button></a>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-12 text-center">
+            <a href="tel:+8334833439" id="call-btn"><button type="button" class="btn btn-danger btn-min-width mr-1 mb-1 text-uppercase"><strong>I Need Help!</strong></button></a>
+         </div>
+      </div>
+      <!-- END HEADER BUTTONS -->
+      <!-- EMERGENCY SCREEN -->
+      <div class="content-screen" data-role="page" id="emergency" data-title="Emergency Information" style="margin-top: 190px;">
+         <div class="row">
+            <div class="col-12">
+               <h4 class="text-center">EMERGENCY INFORMATION</h4>
+            </div>
+         </div>
+         <div class="row match-height">
+            <div class="col-xl-12 col-lg-12">
+               <div class="card">
+                  <div class="card-content">
+                     <div class="card-body">
+                        <div class="tab-content px-1 pt-1">
+                           <div role="tabpanel" class="tab-pane active in" id="active" aria-labelledby="active-tab"
+                              aria-expanded="true">
+                              <div class="container">
+                                 <div class="row">
+                                    <div class="col col-4">
+                                       <strong>Name</strong>
+                                    </div>
+                                    <div class="col col=6" id="full-name"></div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-4">
+                                       <strong>DOB</strong>
+                                    </div>
+                                    <div class="col col-6" id="dob"></div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-4">
+                                       <strong>Age</strong>
+                                    </div>
+                                    <div class="col col-6" id="age"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-12">
+                                       <strong>Emergency Contact</strong>
+                                    </div>
+                                    <div class="col col-12" id="emergency-contact"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-4">
+                                       <strong>Allergies</strong>
+                                    </div>
+                                    <div class="col col-6" id="allergies"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-sm-12 col-md-4">
+                                       <strong>Medical Conditions</strong>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-12" id="medical_conditions"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-sm-12 col-md-6">
+                                       <strong>Current Medications</strong>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-12" id="current_medications"></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END EMERGENCY SCREEN -->
+      <!-- MEDICAL SCREEN -->
+      <div class="content-screen" data-role="page" id="medical" data-title="Medical Information"  style="margin-top: 190px;">
+         <div class="row">
+            <div class="col-12">
+               <h4 class="text-uppercase text-center">Medical Information</h4>
+            </div>
+         </div>
+         <div class="row match-height">
+            <div class="col-xl-12 col-lg-12">
+               <div class="card">
+                  <div class="card-content">
+                     <div class="card-body">
+                        <div class="tab-content px-1 pt-1">
+                           <div role="tabpanel" class="tab-pane active in" id="active" aria-labelledby="active-tab"
+                              aria-expanded="true">
+                              <div class="container">
+                                 <div class="row">
+                                    <div class="col col-4">
+                                       <strong>Name</strong>
+                                    </div>
+                                    <div class="col col=6" id="med-full-name"></div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-4"><strong>DOB</strong></div>
+                                    <div class="col col-6" id="med-dob"></div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-4">
+                                       <strong>Age</strong>
+                                    </div>
+                                    <div class="col col-6" id="med-age"></div>
+                                 </div>
+                                 <hr />
+                                 <!-- Vitals -->
+                                 <div class="row">
+                                    <div class="col col-6">
+                                       <strong>Blood Pressure</strong>
+                                    </div>
+                                    <div class="col col-6" id="blood-pressure"></div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-6">
+                                       <strong>Blood Type</strong>
+                                    </div>
+                                    <div class="col col-6" id="blood-type"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-4">
+                                       <strong>Gender</strong>
+                                    </div>
+                                    <div class="col col-8" id="gender"></div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-4"><strong>Height</strong></div>
+                                    <div class="col col-8" id="height"></div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-4">
+                                       <strong>Weight</strong>
+                                    </div>
+                                    <div class="col col-8" id="weight"></div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-4"><strong>BMI</strong></div>
+                                    <div class="col col-8" id="bmi"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-12">
+                                       <strong>Emergency Contact</strong>
+                                    </div>
+                                    <div class="col col-12" id="med-emergency-contact"></div>
+                                 </div>
+                                 <hr />
+                                 <!-- Allergies -->
+                                 <div class="row">
+                                    <div class="col col-4">
+                                       <strong>Allergies</strong>
+                                    </div>
+                                    <div class="col col-6" id="med-allergies"></div>
+                                 </div>
+                                 <hr />
+                                 <!-- Current Medical Conditions -->
+                                 <div class="row">
+                                    <div class="col col-sm-112 col-md-4">
+                                       <strong>Medical Conditions</strong>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-11 offset-1" id="med-medical_conditions"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-12">
+                                       <strong>Patient Preferences</strong>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-11 offset-1" id="patient_preferences"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-12">
+                                       <strong>Family History</strong>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-11 offset-1" id="family_history"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-12">
+                                       <strong>Lifestyle History</strong>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-11 offset-1" id="lifestyle_history"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-12">
+                                       <strong>Social History</strong>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-11 offset-1" id="social_history"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-12">
+                                       <strong>Care Plan</strong>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-11 offset-1" id="care_plan"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-12">
+                                       <strong>Lab Results</strong>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-11 offset-1" id="lab_results"></div>
+                                 </div>
+                                 <hr />
+                                 <div class="row">
+                                    <div class="col col-12">
+                                       <strong>Referrals</strong>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-11 offset-1" id="referrals"></div>
+                                 </div>
+                                 <hr />
+                                 <!-- Images -->
+                                 <div class="row">
+                                    <div class="col col-12">
+                                       <p><strong>Diagnostic Images</strong></p>
+                                    </div>
+                                 </div>
+                                 <div class="row">
+                                    <div class="col col-12" id="medical_images" style="text-align: center;">
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END MEDICAL -->
+      <!-- DENTAL SCREEN -->
+      <div class="content-screen" data-role="page" id="dental" data-title="Dental Information"  style="margin-top: 190px;">
+         <div class="row">
+            <div class="col-12">
+               <h4 class="text-uppercase text-center">Dental Information</h4>
+            </div>
+         </div>
+         <div class="col-xl-12 col-lg-12">
+            <div class="card">
+               <div class="card-content">
+                  <div class="card-body">
+                     <div class="tab-content px-1 pt-1">
+                        <div class="row">
+                           <div class="col col-12">
+                              <strong>Primary Dentist</strong>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col col-11 offset-1" id="dentist_name"></div>
+                           <div class="col col-11 offset-1" id="dentist_phone"></div>
+                           <div class="col col-11 offset-1" id="dentist_email"></div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                           <div class="col col-12">
+                              <strong>Dental Condition</strong>
+                           </div>
+                           <div class="col col-11 offset-1" id="dental_condition"></div>
+                        </div>
+                        <hr />
+                        <!-- Images -->
+                        <div class="row">
+                           <div class="col col-12">
+                              <p><strong>Diagnostic Images</strong></p>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col col-12" id="dental_images" style="text-align: center;"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END DENTAL -->
+      <!-- MEDICATIONS SCREEN -->
+      <div class="content-screen" data-role="page" id="medications" data-title="Medications Information"  style="margin-top: 190px;">
+         <div class="row">
+            <div class="col-12">
+               <h4 class="text-uppercase text-center">Current Medications</h4>
+            </div>
+         </div>
+         <div class="col-xl-12 col-lg-12">
+            <div class="card">
+               <div class="card-content">
+                  <div class="card-body">
+                     <div class="tab-content px-1 pt-1">
+                        <div class="container" id="medication_list"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END MEDICATIONS -->
+      <!-- INSURANCE SCREEN -->
+      <div class="content-screen" data-role="page" id="insurance" data-title="Insurnace Information"  style="margin-top: 190px;">
+         <div class="row">
+            <div class="col-12">
+               <h4 class="text-uppercase text-center">Insurnace Information</h4>
+            </div>
+         </div>
+         <div class="col-xl-12 col-lg-12">
+            <div class="card">
+               <div class="card-content">
+                  <div class="card-body">
+                     <div class="tab-content px-1 pt-1">
+                        <div class="row">
+                           <div class="col col-12">
+                              <strong>Medical Insurance</strong>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col col-4">
+                              <strong>Provider</strong>
+                           </div>
+                           <div class="col col=6" style="font-weight: 600" id="ins_provider_med"></div>
+                        </div>
+                        <div class="row">
+                           <div class="col col-4">
+                              <strong>Group ID</strong>
+                           </div>
+                           <div class="col col-6" id="ins_planid_med"></div>
+                        </div>
+                        <div class="row">
+                           <div class="col col-4">
+                              <strong>Contact</strong>
+                           </div>
+                           <div class="col col-8">
+                              <div id="ins_street_addr_med"></div>
+                              <div id="ins_phone_med"></div>
+                              <div id="ins_email_med"></div>
+                           </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                           <div class="col col-12">
+                              <strong>Dental Insurance</strong>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col col-4">
+                              <strong>Provider</strong>
+                           </div>
+                           <div class="col col=6" style="font-weight: 600" id="ins_provider_dental"></div>
+                        </div>
+                        <div class="row">
+                           <div class="col col-4">
+                              <strong>Group ID</strong>
+                           </div>
+                           <div class="col col-6" id="ins_planid_dental"></div>
+                        </div>
+                        <div class="row">
+                           <div class="col col-4">
+                              <strong>Contact</strong>
+                           </div>
+                           <div class="col col-8">
+                              <div id="ins_street_addr_dental"></div>
+                              <div id="ins_phone_dental"></div>
+                              <div id="ins_email_dental"></div>
+                           </div>
+                        </div>
+                        <hr />
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END INSURANCE -->
+      <!-- SHARE SCREEN -->
+      <div class="content-screen" data-role="page" id="share" data-title="Share Your Records"  style="margin-top: 190px;">
+         <div class="row">
+            <div class="col-12">
+               <h4 class="text-uppercase text-center">Share Your Records</h4>
+            </div>
+         </div>
+         <div class="col-xl-12 col-lg-12">
+            <div class="card">
+               <div class="card-content">
+                  <div class="card-body">
+                     <div class="tab-content px-1 pt-1">
+                        <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2">
+                           <span>Enter an Email Address</span>
+                        </p>
+                        <input class="form-control" id="share-email" name="email" placeholder="Email Address" type="text" value="">
+                        <br />
+                        <input class="btn btn-outline-primary btn-block" id="submit" name="submit" type="submit">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END SHARE -->
+      </div> <!-- CLOSE CONTAINER -->
+      </div>
+      <script src="static/vendors/js/vendors.min.js" type="text/javascript"></script>
+      <link rel="stylesheet" type="text/css" href= "static/styles/core/colors/palette-climacon.css">
+      <link rel="stylesheet" type="text/css" href= "static/fonts/simple-line-icons/style.min.css">
+      <script src="static/js/core/app-menu.js" type="text/javascript"></script>
+      <script src="static/js/core/app.js" type="text/javascript"></script>
+      <script src="js/index.js" type="text/javascript"></script>
+   </body>
+</html>

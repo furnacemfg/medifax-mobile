@@ -22,6 +22,9 @@
     <feature name="HiddenStatusbarOverlay">
         <param name="ios-package" value="APPHiddenStatusbarOverlay" />
     </feature>
+    <feature name="SpeechRecognition">
+        <param name="ios-package" value="SpeechRecognition" />
+    </feature>
     <name>Medifax</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

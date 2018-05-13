@@ -12,6 +12,9 @@
     },
     "cordova-plugin-hidden-statusbar-overlay": {
       "PACKAGE_NAME": "com.mymedifax.mobile"
+    },
+    "cordova-plugin-speechrecognition": {
+      "PACKAGE_NAME": "com.mymedifax.mobile"
     }
   },
   "dependent_plugins": {}

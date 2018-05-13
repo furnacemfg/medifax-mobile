@@ -1,0 +1,47 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<preference name=\"Fullscreen\" value=\"true\" />",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-hidden-statusbar-overlay": {
+      "PACKAGE_NAME": "com.mymedifax.mobile"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.mymedifax.mobile"
+    },
+    "cordova-plugin-speechrecognition": {
+      "PACKAGE_NAME": "com.mymedifax.mobile"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "file": "plugins/cordova-plugin-speechrecognition/www/speechRecognition.js",
+      "id": "cordova-plugin-speechrecognition.SpeechRecognition",
+      "pluginId": "cordova-plugin-speechrecognition",
+      "merges": [
+        "window.plugins.speechRecognition"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-hidden-statusbar-overlay": "2.0.1",
+    "cordova-plugin-whitelist": "1.3.3",
+    "cordova-plugin-speechrecognition": "1.1.2"
+  }
+}
