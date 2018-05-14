@@ -152,8 +152,6 @@ $( document ).ready(function() {
 
   } // End customer data assignments
 
- window.plugins.speechRecognition.startListening(successCallback, errorCallback);
-
 });
 
 
