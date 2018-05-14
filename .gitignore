@@ -1,9 +1,9 @@
 # Mac
 .DS_Store
 
-platforms/
+platforms/*
 *.xcuserdatad
-plugins/
+plugins/*
 
 # res
 resources/signing
