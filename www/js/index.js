@@ -27,6 +27,8 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        // Initialisation of speech recognisation
+        initSpeechRecognition();
         this.receivedEvent('deviceready');
     },
 
@@ -257,3 +259,94 @@ function convert_inches(inches) {
     inches %= 12;
     return feet + "' " + inches + '\"';
 }
+
+// Function to initialise speech recognition and check whether device will support or not.
+function initSpeechRecognition(){
+  window.plugins.speechRecognition.isRecognitionAvailable(
+    function(result){ //successCallback
+      // check permission of speech recognition
+      checkSpeechRecognitionPermission();
+    }, 
+    function(result){ //errorCallback
+      
+    });
+}
+
+// Function to check permission of speech recognition
+function checkSpeechRecognitionPermission(){
+  window.plugins.speechRecognition.hasPermission(
+    function(result){ //successCallback
+      if(result == false){
+        // If permission is not there than ask for permission
+        requestSpeechRecognitionPermission();
+      }
+      else{
+        // If permission is already given than initialise monitoring of speech
+        initiateSpeechMonitoring();
+      }
+    }, 
+    function(result){ //errorCallback
+      requestSpeechRecognitionPermission();
+    });
+}
+
+// Function to request permission of speech recognition
+function requestSpeechRecognitionPermission(){
+  window.plugins.speechRecognition.requestPermission(
+    function(result){ //successCallback
+      initiateSpeechMonitoring();
+    }, 
+    function(result){ //errorCallback
+      
+    });
+}
+
+// Function to start monitoring speech recognition
+function initiateSpeechMonitoring(){
+    // As iOS will not record condition to end sentence that's why I have put endless loop to continuously monitoring speech
+    startSpeechRecognition();
+    setTimeout(function(){
+        stopSpeechRecognition(); 
+        initiateSpeechMonitoring();
+    },5000);      
+}
+
+// Function to start speech recognition
+function startSpeechRecognition(){
+    var options = {
+      language: "en-US",
+      matches: 3,
+      prompt: "",
+      showPopup: false,
+      showPartial: false
+    };
+
+  window.plugins.speechRecognition.startListening(
+    function(result){ //successCallback
+      // Checking phrase "I need help" and if it succeed than initiate call
+      var speech = result[0];
+      if(typeof(previousSpeech) != "undefined"){
+        speech = previousSpeech + speech
+      }
+      if(speech.toLowerCase().search("i need help") != -1){
+        // Initiate call to given number if hear phrase "I need help"
+        window.location.href="tel:+8334833439";
+      }
+      previousSpeech = result[0];
+    }, 
+    function(result){ //errorCallback
+
+    }, options);
+}
+
+// Function to stop speech recognition
+function stopSpeechRecognition(){
+  window.plugins.speechRecognition.stopListening(
+    function(result){ //successCallback
+
+    }, 
+    function(result){ //errorCallback
+
+    });
+}
+
