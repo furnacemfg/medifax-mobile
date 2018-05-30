@@ -19,11 +19,11 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="HiddenStatusbarOverlay">
-        <param name="ios-package" value="APPHiddenStatusbarOverlay" />
-    </feature>
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="HiddenStatusbarOverlay">
+        <param name="ios-package" value="APPHiddenStatusbarOverlay" />
     </feature>
     <feature name="SpeechRecognition">
         <param name="ios-package" value="SpeechRecognition" />

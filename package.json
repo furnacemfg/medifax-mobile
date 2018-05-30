@@ -27,9 +27,9 @@
             "cordova-plugin-speechrecognition": {}
         },
         "platforms": [
-            "ios",
             "browser",
-            "android"
+            "android",
+            "ios"
         ]
     }
 }

@@ -28,9 +28,12 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
 
+
       //if(device.platform.toLowerCase() != "android"){
         //window.VolumeControl.setVolume(0);
       //}
+
+        // Initialisation of speech recognisation
         initSpeechRecognition();
         this.receivedEvent('deviceready');
     },
@@ -286,11 +289,9 @@ function checkSpeechRecognitionPermission(){
       }
     }, 
     function(result){ //errorCallback
-      //alert(JSON.stringify(result));
       requestSpeechRecognitionPermission();
     });
 }
-
 function requestSpeechRecognitionPermission(){
   window.plugins.speechRecognition.requestPermission(
     function(result){ //successCallback
@@ -304,22 +305,11 @@ function requestSpeechRecognitionPermission(){
 
 function initiateSpeechMonitoring(){
 
-  //speechMonitoringInterval1 = setInterval(function(){
       startSpeechRecognition();
-      //if(device.platform.toLowerCase() != "android"){
         setTimeout(function(){
             stopSpeechRecognition(); 
             initiateSpeechMonitoring();
         },5000);
-      //}
-  //},5001);
-
-  // speechMonitoringInterval2 = setInterval(function(){
-  //     startSpeechRecognition();
-  //     setTimeout(function(){
-  //         stopSpeechRecognition();  
-  //     },3000);
-  // },3001);
 }
 
 function startSpeechRecognition(){
@@ -342,17 +332,13 @@ function startSpeechRecognition(){
 
   window.plugins.speechRecognition.startListening(
     function(result){ //successCallback
-      //alert(result[0]);
+      // Checking phrase "I need help" and if it succeed than initiate call
       var speech = result[0];
       if(typeof(previousSpeech) != "undefined"){
         speech = previousSpeech + speech
       }
       if(speech.toLowerCase().search("i need help") != -1){
-        //clearInterval(speechMonitoringInterval1);
-        //clearInterval(speechMonitoringInterval2);
-        //alert("Jay Mataji...");
         window.location.href="tel:+8334833439";
-        //window.location.href="tel:+918980555590";
       }
       previousSpeech = result[0];
     }, 
