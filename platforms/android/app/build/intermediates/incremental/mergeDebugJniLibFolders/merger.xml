@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/debug/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Applications/MAMP/htdocs/Client&apos;sProject/Bryan-Speech/GitHub/medifax-mobile/platforms/android/app/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Applications/MAMP/htdocs/Client&apos;sProject/Bryan-Speech/GitHub/medifax-mobile/platforms/android/app/src/debug/jniLibs"/></dataSet></merger>

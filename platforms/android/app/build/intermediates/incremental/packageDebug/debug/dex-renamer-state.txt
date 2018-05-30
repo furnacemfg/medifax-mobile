@@ -1,4 +1,4 @@
-#Sat May 12 19:41:49 MDT 2018
-base.0=/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Thu May 17 18:05:25 IST 2018
+base.0=/Applications/MAMP/htdocs/Client'sProject/Bryan-Speech/GitHub/medifax-mobile/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
 renamed.0=classes.dex
-file.0=/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex
+file.0=/Applications/MAMP/htdocs/Client'sProject/Bryan-Speech/GitHub/medifax-mobile/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

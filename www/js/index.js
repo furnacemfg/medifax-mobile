@@ -27,6 +27,11 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+
+      //if(device.platform.toLowerCase() != "android"){
+        //window.VolumeControl.setVolume(0);
+      //}
+        initSpeechRecognition();
         this.receivedEvent('deviceready');
     },
 
@@ -256,4 +261,113 @@ function convert_inches(inches) {
   var feet = Math.floor(inches / 12);
     inches %= 12;
     return feet + "' " + inches + '\"';
+}
+
+function initSpeechRecognition(){
+  window.plugins.speechRecognition.isRecognitionAvailable(
+    function(result){ //successCallback
+      //alert(JSON.stringify(result));
+      checkSpeechRecognitionPermission()
+    }, 
+    function(result){ //errorCallback
+      //alert(JSON.stringify(result));
+    });
+}
+
+function checkSpeechRecognitionPermission(){
+  window.plugins.speechRecognition.hasPermission(
+    function(result){ //successCallback
+      //alert("Has permission: " + JSON.stringify(result));
+      if(result == false){
+        requestSpeechRecognitionPermission();
+      }
+      else{
+        initiateSpeechMonitoring();
+      }
+    }, 
+    function(result){ //errorCallback
+      //alert(JSON.stringify(result));
+      requestSpeechRecognitionPermission();
+    });
+}
+
+function requestSpeechRecognitionPermission(){
+  window.plugins.speechRecognition.requestPermission(
+    function(result){ //successCallback
+      //alert("Request permission: " + JSON.stringify(result));
+      initiateSpeechMonitoring();
+    }, 
+    function(result){ //errorCallback
+      //alert("Request permission: " + JSON.stringify(result));
+    });
+}
+
+function initiateSpeechMonitoring(){
+
+  //speechMonitoringInterval1 = setInterval(function(){
+      startSpeechRecognition();
+      //if(device.platform.toLowerCase() != "android"){
+        setTimeout(function(){
+            stopSpeechRecognition(); 
+            initiateSpeechMonitoring();
+        },5000);
+      //}
+  //},5001);
+
+  // speechMonitoringInterval2 = setInterval(function(){
+  //     startSpeechRecognition();
+  //     setTimeout(function(){
+  //         stopSpeechRecognition();  
+  //     },3000);
+  // },3001);
+}
+
+function startSpeechRecognition(){
+
+  // var options = {
+  //   String language,
+  //   Number matches,
+  //   String prompt,      // Android only
+  //   Boolean showPopup,  // Android only
+  //   Boolean showPartial 
+  // }
+
+    var options = {
+      language: "en-US",
+      matches: 3,
+      prompt: "",
+      showPopup: false,
+      showPartial: false
+    };
+
+  window.plugins.speechRecognition.startListening(
+    function(result){ //successCallback
+      //alert(result[0]);
+      var speech = result[0];
+      if(typeof(previousSpeech) != "undefined"){
+        speech = previousSpeech + speech
+      }
+      if(speech.toLowerCase().search("i need help") != -1){
+        //clearInterval(speechMonitoringInterval1);
+        //clearInterval(speechMonitoringInterval2);
+        //alert("Jay Mataji...");
+        window.location.href="tel:+8334833439";
+        //window.location.href="tel:+918980555590";
+      }
+      previousSpeech = result[0];
+    }, 
+    function(result){ //errorCallback
+      //alert("Speech error: " + JSON.stringify(result));
+    }, options);
+}
+
+function stopSpeechRecognition(){
+  window.plugins.speechRecognition.stopListening(
+    function(result){ //successCallback
+      //alert("Request permission: " + JSON.stringify(result));
+      //startSpeechRecognition();
+    }, 
+    function(result){ //errorCallback
+      //alert("Request permission: " + JSON.stringify(result));
+    });
 }

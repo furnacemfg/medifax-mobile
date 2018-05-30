@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/build/intermediates/res/merged/debug/values_values.arsc.flat",
+            "outputFile": "/Applications/MAMP/htdocs/Client'sProject/Bryan-Speech/GitHub/medifax-mobile/platforms/android/app/build/intermediates/res/merged/debug/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile/platforms/android/app/src/main/res/values/strings.xml",
+                    "source": "/Applications/MAMP/htdocs/Client'sProject/Bryan-Speech/GitHub/medifax-mobile/platforms/android/app/src/main/res/values/strings.xml",
                     "from": {
                         "startLines": "4,2,3",
                         "startColumns": "4,4,4",

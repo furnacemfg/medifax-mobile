@@ -13,8 +13,11 @@
     "cordova-plugin-hidden-statusbar-overlay": {
       "PACKAGE_NAME": "com.mymedifax.mobile"
     },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.realintelligence.FMS"
+    },
     "cordova-plugin-speechrecognition": {
-      "PACKAGE_NAME": "com.mymedifax.mobile"
+      "PACKAGE_NAME": "com.medifax.mobile"
     }
   },
   "dependent_plugins": {}

@@ -5,25 +5,29 @@
   },
   "config_munge": {
     "files": {
-      "config.xml": {
+      "res/xml/config.xml": {
         "parents": {
           "/*": [
             {
-              "xml": "<preference name=\"Fullscreen\" value=\"true\" />",
+              "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"SpeechRecognition\"><param name=\"android-package\" value=\"com.pbakondy.SpeechRecognition\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             }
           ]
         }
       },
-      "res/xml/config.xml": {
+      "config.xml": {
         "parents": {
           "/*": [
             {
-              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"SpeechRecognition\"><param name=\"android-package\" value=\"com.pbakondy.SpeechRecognition\" /></feature>",
+              "xml": "<preference name=\"Fullscreen\" value=\"true\" />",
               "count": 1
             }
           ]
@@ -42,18 +46,29 @@
     }
   },
   "installed_plugins": {
-    "cordova-plugin-hidden-statusbar-overlay": {
-      "PACKAGE_NAME": "com.mymedifax.mobile"
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.medifax.mobile"
     },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.mymedifax.mobile"
+    "cordova-plugin-hidden-statusbar-overlay": {
+      "PACKAGE_NAME": "com.medifax.mobile"
     },
     "cordova-plugin-speechrecognition": {
-      "PACKAGE_NAME": "com.mymedifax.mobile"
+      "PACKAGE_NAME": "com.medifax.mobile"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.medifax.mobile"
     }
   },
   "dependent_plugins": {},
   "modules": [
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
+      ]
+    },
     {
       "id": "cordova-plugin-speechrecognition.SpeechRecognition",
       "file": "plugins/cordova-plugin-speechrecognition/www/speechRecognition.js",
@@ -64,8 +79,9 @@
     }
   ],
   "plugin_metadata": {
+    "cordova-plugin-device": "2.0.2",
     "cordova-plugin-hidden-statusbar-overlay": "2.0.1",
-    "cordova-plugin-whitelist": "1.3.3",
-    "cordova-plugin-speechrecognition": "1.1.2"
+    "cordova-plugin-speechrecognition": "1.1.2",
+    "cordova-plugin-whitelist": "1.3.3"
   }
 }

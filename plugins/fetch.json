@@ -15,10 +15,18 @@
     "is_top_level": true,
     "variables": {}
   },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
   "cordova-plugin-speechrecognition": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-speechrecognition@^1.2.0"
+      "id": "cordova-plugin-speechrecognition"
     },
     "is_top_level": true,
     "variables": {}

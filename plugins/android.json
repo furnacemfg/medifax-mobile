@@ -7,14 +7,17 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-hidden-statusbar-overlay": {
-      "PACKAGE_NAME": "com.mymedifax.mobile"
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.medifax.mobile"
     },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.mymedifax.mobile"
+    "cordova-plugin-hidden-statusbar-overlay": {
+      "PACKAGE_NAME": "com.medifax.mobile"
     },
     "cordova-plugin-speechrecognition": {
-      "PACKAGE_NAME": "com.mymedifax.mobile"
+      "PACKAGE_NAME": "com.medifax.mobile"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.medifax.mobile"
     }
   },
   "dependent_plugins": {}

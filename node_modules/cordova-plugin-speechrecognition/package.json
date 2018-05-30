@@ -1,19 +1,19 @@
 {
-  "_from": "cordova-plugin-speechrecognition@^1.2.0",
+  "_from": "cordova-plugin-speechrecognition",
   "_id": "cordova-plugin-speechrecognition@1.2.0",
   "_inBundle": false,
   "_integrity": "sha1-AF8QyJb9kpPYWH/lUiorZC3qlwo=",
   "_location": "/cordova-plugin-speechrecognition",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "tag",
     "registry": true,
-    "raw": "cordova-plugin-speechrecognition@^1.2.0",
+    "raw": "cordova-plugin-speechrecognition",
     "name": "cordova-plugin-speechrecognition",
     "escapedName": "cordova-plugin-speechrecognition",
-    "rawSpec": "^1.2.0",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "^1.2.0"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
     "#USER",
@@ -21,8 +21,8 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-speechrecognition/-/cordova-plugin-speechrecognition-1.2.0.tgz",
   "_shasum": "005f10c896fd9293d8587fe5522a2b642dea970a",
-  "_spec": "cordova-plugin-speechrecognition@^1.2.0",
-  "_where": "/Users/bryan/Work/FURNACE/Projects/Medifax/src/MedifaxMobile",
+  "_spec": "cordova-plugin-speechrecognition",
+  "_where": "/Applications/MAMP/htdocs/Client'sProject/Bryan-Speech/GitHub/medifax-mobile",
   "author": {
     "name": "Peter Bakondy"
   },

@@ -13,20 +13,23 @@
         "cordova-android": "^7.0.0",
         "cordova-browser": "^5.0.3",
         "cordova-ios": "^4.5.4",
+        "cordova-plugin-device": "^2.0.2",
         "cordova-plugin-hidden-statusbar-overlay": "git+https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay.git",
         "cordova-plugin-speechrecognition": "^1.2.0",
+        "cordova-plugin-volumecontrol": "git+https://github.com/JackJohnG/cordova-plugin-volumecontrol.git",
         "cordova-plugin-whitelist": "^1.3.3"
     },
     "cordova": {
         "plugins": {
             "cordova-plugin-whitelist": {},
             "cordova-plugin-hidden-statusbar-overlay": {},
+            "cordova-plugin-device": {},
             "cordova-plugin-speechrecognition": {}
         },
         "platforms": [
             "ios",
-            "android",
-            "browser"
+            "browser",
+            "android"
         ]
     }
 }
